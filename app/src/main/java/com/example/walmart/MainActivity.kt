@@ -2,6 +2,7 @@ package com.example.walmart
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.walmart.domain.User
 
 class MainActivity : AppCompatActivity() {
 
@@ -9,4 +10,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
+
+
+
+
+
+
 }
