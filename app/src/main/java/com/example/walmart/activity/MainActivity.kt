@@ -1,4 +1,4 @@
-package com.example.walmart
+package com.example.walmart.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import com.example.walmart.R
 import com.example.walmart.dao.UserList
 import com.example.walmart.domain.User
 
@@ -61,9 +62,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-
-
+    fun onClickRegister(view: View) {
+        var intent = Intent(this, RegisterUserActivity::class.java)
+        startActivity(intent)
+    }
 
 
 }

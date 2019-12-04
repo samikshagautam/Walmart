@@ -1,9 +1,10 @@
-package com.example.walmart
+package com.example.walmart.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.GridView
 import android.widget.TextView
+import com.example.walmart.R
 import com.example.walmart.adapter.ShoppingCategoryAdapter
 import kotlinx.android.synthetic.main.activity_shopping.*
 
@@ -27,7 +28,7 @@ class ShoppingActivity : AppCompatActivity() {
         //ShoppingCategory Adapter
         val adapter = ShoppingCategoryAdapter()
         shoppingGridView.adapter = adapter
-        
+
 
     }
 }

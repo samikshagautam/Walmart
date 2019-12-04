@@ -23,11 +23,11 @@ class User {
         this.password = password
     }
 
-    constructor(username: String, password: String, firstname: String, lastname: String) {
-        this.username = username
-        this.password = password
+    constructor(firstname: String, lastname: String, username: String, password: String) {
         this.firstname = firstname
         this.lastname = lastname
+        this.username = username
+        this.password = password
     }
 
 

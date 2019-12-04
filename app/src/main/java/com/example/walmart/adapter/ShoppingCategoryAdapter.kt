@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.example.walmart.R
 import com.example.walmart.domain.Category
 import kotlin.collections.ArrayList
@@ -19,6 +20,7 @@ class ShoppingCategoryAdapter: BaseAdapter() {
         val inflater = parent?.context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val view = inflater.inflate(R.layout.category_layout, null)
 
+        //Get ImageView and TextView from category_layout.xml
         val imageView = view.findViewById<ImageView>(R.id.imageView)
         val textView = view.findViewById<TextView>(R.id.textView)
 
@@ -26,6 +28,11 @@ class ShoppingCategoryAdapter: BaseAdapter() {
         val category: Category = getCategories()[position]
         imageView.setImageResource(category.image)
         textView.text = category.name
+
+        //ImageView Click Action
+        imageView.setOnClickListener{
+            Toast.makeText(parent?.context, "You have chosen ${category.name} category of shopping.",Toast.LENGTH_SHORT).show()
+        }
 
         return view
 
@@ -43,6 +50,7 @@ class ShoppingCategoryAdapter: BaseAdapter() {
         return getCategories().size
     }
 
+    //Make ArrayList of Categories
     private fun getCategories(): ArrayList<Category>{
         return arrayListOf(
             Category("Electronics", R.drawable.product1),
