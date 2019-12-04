@@ -51,8 +51,12 @@ class MainActivity : AppCompatActivity() {
             receiver, etc.
              */
 
-            var intent = Intent(this, ShoppingActivity::class.java) //
-            intent.putExtra("username", username) // From MainActivity.kt pass the username to ShoppingCategory activity
+            //creating intent, similar to -> Intent intent = new Intent(this, ShoppingActivity.class) in Java
+            var intent = Intent(this, ShoppingActivity::class.java)
+
+            //From MainActivity.kt pass the username to ShoppingCategory activity
+            //Here, "username" is the key to retrieve the username in 2nd activity, i.e. ShoppingActivity
+            intent.putExtra("username", username)
             startActivity(intent) //starts the intent
         }
     }

@@ -4,8 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ShoppingActivity">
 
 
+    <TextView
+        android:id="@+id/showUsernameInWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="220dp"
+        tools:layout_editor_absoluteY="35dp"
+        tools:text="Welcome" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20sp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Shop By Categories"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="220dp"
+        tools:layout_editor_absoluteY="35dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20sp" />
+
+    <GridView
+        android:id="@+id/shoppingGridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:padding="15dp" />
 
 </LinearLayout>
