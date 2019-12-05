@@ -1,6 +1,7 @@
 package com.example.walmart.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,10 +9,13 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import com.example.walmart.R
+import com.example.walmart.activity.ProductListActivity
 import com.example.walmart.domain.Category
 import kotlin.collections.ArrayList
 
+/*
 class ShoppingCategoryAdapter: BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
@@ -31,7 +35,12 @@ class ShoppingCategoryAdapter: BaseAdapter() {
 
         //ImageView Click Action
         imageView.setOnClickListener{
-            Toast.makeText(parent?.context, "You have chosen ${category.name} category of shopping.",Toast.LENGTH_SHORT).show()
+          //  Toast.makeText(parent?.context, "You have chosen ${category.name} category of shopping.",Toast.LENGTH_SHORT).show()
+
+
+          var intent = Intent(parent?.context, ProductListActivity::class.java)
+          parent?.context.startActivity(intent)
+
         }
 
         return view
@@ -59,4 +68,43 @@ class ShoppingCategoryAdapter: BaseAdapter() {
             Category("Food", R.drawable.product4)
         )
     }
+}*/
+
+class ShoppingCategoryAdapter(var context: Context, private val myDataset: Array<Category>):
+        RecyclerView.Adapter<ShoppingCategoryAdapter.MyViewHolder>(){
+
+    class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        //Get ImageView and TextView from category_layout.xml
+        val imageView = itemView.findViewById<ImageView>(R.id.imageView)
+        val textView = itemView.findViewById<TextView>(R.id.textView)
+    }
+
+    //Create new views
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoppingCategoryAdapter.MyViewHolder {
+
+        //create a new View
+        val productView = LayoutInflater.from(parent.context).inflate(R.layout.category_layout, parent, false)
+
+        return MyViewHolder(productView)
+    }
+
+    //get the size of dataSet
+    override fun getItemCount() = myDataset.size
+
+    //Replace the contents of a view (invoked by layout manager)
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        //get elements from your dataset at this position
+        //replace the contents of the view with that element
+
+        holder.imageView.setImageResource(myDataset[position].image)
+        holder.textView.text = myDataset[position].name
+
+        holder.imageView.setOnClickListener{
+            var intent = Intent(context,ProductListActivity::class.java)
+            intent.putExtra("category",myDataset[position])
+            context.startActivity(intent)
+
+        }
+    }
+
 }

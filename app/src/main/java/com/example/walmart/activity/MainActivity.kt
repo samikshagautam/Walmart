@@ -47,9 +47,9 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"Logged In Successfully", Toast.LENGTH_LONG).show()  //display 'Logged In Successfully msg
 
             /*
-            Intent is used to request another app component to perform an action. Intent facilitates users to communicate with app
-            component through several ways such as starting an activity, starting a service, delivering a broadcast
-            receiver, etc.
+            Intent is used to request another app component to perform an action. Intent facilitates users to communicate
+            with app component through several ways such as starting an activity, starting a service, delivering a
+            broadcast receiver, etc.
              */
 
             //creating intent, similar to -> Intent intent = new Intent(this, ShoppingActivity.class) in Java

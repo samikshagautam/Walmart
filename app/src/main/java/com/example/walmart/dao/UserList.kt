@@ -10,11 +10,11 @@ class UserList{
     val userList: ArrayList<User> = ArrayList<User>()
 
     constructor(){
-        userList.add(User("samiksha@gmail.com", "samik", "Samiksha", "Gautam"))
-        userList.add(User("ram@gmail.com","ram","Ram","Shrestha"))
-        userList.add(User("shire@gmail.com","shire","Shire","Pandey"))
-        userList.add(User("sita@gmail.com","sita","Sita","Shah"))
-        userList.add(User("tony@stark.com","tony","Tony","Stark"))
+        userList.add(User("Samiksha","Gautam","samiksha@gmail.com", "samik"))
+        userList.add(User("Ram","Shrestha", "ram@gmail.com","ram"))
+        userList.add(User("Shire","Pandey", "shire@gmail.com","shire"))
+        userList.add(User("Sita","Shah","sita@gmail.com","sita"))
+        userList.add(User("Tony","Stark", "tony@stark.com","tony"))
     }
 
     //getUserByUsernameAndPassword - if user exist with that username & password, return user

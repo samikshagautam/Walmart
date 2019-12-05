@@ -15,12 +15,7 @@
         android:gravity="right"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="35dp"
-        tools:text="Welcome" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20sp" />
+        tools:layout_editor_absoluteY="35dp" />
 
     <TextView
         android:id="@+id/title"
@@ -32,15 +27,9 @@
         tools:layout_editor_absoluteX="220dp"
         tools:layout_editor_absoluteY="35dp" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20sp" />
-
-    <GridView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/shoppingGridView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:numColumns="2"
-        android:padding="15dp" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

@@ -32,7 +32,7 @@ class RegisterUserActivity : AppCompatActivity() {
             Toast.makeText(this, "Password cannot be null.", Toast.LENGTH_LONG).show()
         }
 
-        //
+        //Get fields from the register page and convert to String
         val firstName = firstName.text.toString()
         val lastName = lastName.text.toString()
         val username = username.text.toString()
